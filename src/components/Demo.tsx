@@ -1,5 +1,4 @@
 import { IntentRender } from "@ctrip/intent-render-react";
-import myActions from "./myActions";
 
 function Demo() {
   return (
@@ -18,13 +17,16 @@ function Demo() {
             type: "Button",
             props: { label: "Say hello" },
             on: {
-              click: [{ call: "showHello", args: { name: "world" } }],
+              click: [
+                { call: "showHello", args: { name: "world" } },
+                // { call: "showError", args: {} },
+              ],
+              // click: "$workflow:showError"
             },
           },
         ],
       }}
       data={{}}
-      actions={myActions}
     />
   );
 }
